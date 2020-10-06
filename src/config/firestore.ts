@@ -1,8 +1,5 @@
-import { Firestore } from '@google-cloud/firestore'
+import { Firestore } from '@google-cloud/firestore';
 
-const firestoreClient = new Firestore({
-  projectId: 'ruptiva-project-012588',
-  keyFilename: './keyfile.json'
-})
+const firestoreClient = new Firestore();
 
-export default firestoreClient
+export default firestoreClient;
