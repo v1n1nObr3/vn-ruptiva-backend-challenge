@@ -42,21 +42,21 @@ function main() {
 
   const app = express();
 
-  app.use('/', corsMiddleware, bodyParserMiddleware, sessionMiddleware);
+  app.use('/api/', corsMiddleware, bodyParserMiddleware, sessionMiddleware);
 
-  app.post('/logged', isLoggedMiddleware);
+  app.post('/api/logged', isLoggedMiddleware);
 
-  app.post('/register', registerMiddleware);
+  app.post('/api/register', registerMiddleware);
 
-  app.post('/login', loginMiddleware);
+  app.post('/api/login', loginMiddleware);
 
-  app.post('/logout', isAuthMiddleware, logoutMiddleware);
+  app.post('/api/logout', isAuthMiddleware, logoutMiddleware);
 
-  app.post('/user/repositories/get', isAuthMiddleware, getMiddleware);
+  app.post('/api/user/repositories/get', isAuthMiddleware, getMiddleware);
 
-  app.post('/user/repositories/add', isAuthMiddleware, addMiddleware);
+  app.post('/api/user/repositories/add', isAuthMiddleware, addMiddleware);
 
-  app.post('/user/repositories/delete', isAuthMiddleware, deleteMiddleware);
+  app.post('/api/user/repositories/delete', isAuthMiddleware, deleteMiddleware);
 
   app.listen(4000, () =>
     console.log(
